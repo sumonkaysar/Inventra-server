@@ -13,6 +13,12 @@ const envFields = [
   // Backend URL
   "BACKEND_DEV_URL",
   "BACKEND_PROD_URL",
+
+  // JWT
+  "JWT_SECRET",
+  "JWT_EXPIRES_IN",
+  "JWT_REFRESH_SECRET",
+  "JWT_REFRESH_EXPIRES_IN",
 ] as const;
 
 type IEnv = Record<(typeof envFields)[number], string>;
