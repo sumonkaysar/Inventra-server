@@ -14,6 +14,9 @@ const envFields = [
   "BACKEND_DEV_URL",
   "BACKEND_PROD_URL",
 
+  // Hash Password
+  "BCRYPTJS_SALT_ROUND",
+
   // JWT
   "JWT_SECRET",
   "JWT_EXPIRES_IN",
