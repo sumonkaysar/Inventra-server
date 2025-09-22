@@ -9,7 +9,7 @@ const userSchema = new Schema<IUser>(
     password: { type: String, required: true },
     role: { type: String, enum: Object.values(Role), default: Role.USER },
     profileImage: { type: String },
-    isTwoFactorEnabled: { type: Boolean },
+    isTwoFactorEnabled: { type: Boolean, default: false },
   },
   {
     timestamps: true,

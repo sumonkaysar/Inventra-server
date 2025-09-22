@@ -43,7 +43,7 @@ process.on("unhandledRejection", (err) => {
 // Uncaught Rejection Error
 process.on("uncaughtException", (err) => {
   console.log(
-    `😈 Unhandled Exception is detected, server is shutting down ...`,
+    `😈 Uncaught Exception is detected, server is shutting down ...`,
     err
   );
 
