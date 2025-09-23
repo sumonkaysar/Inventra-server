@@ -2,9 +2,9 @@ import bcryptjs from "bcryptjs";
 import envConfig from "../../config/env.config";
 import AppError from "../../errorHelpers/AppError";
 import httpStatus from "../../utils/httpStatus";
+import { generateToken } from "../../utils/jwt";
 import { IUser } from "../user/user.interface";
 import { User } from "../user/user.model";
-import { generateToken } from "../../utils/jwt";
 
 const createUser = async (payload: Partial<IUser>) => {
   const { fullName, email, password, ...rest } = payload;
@@ -29,6 +29,7 @@ const createUser = async (payload: Partial<IUser>) => {
 
   return user;
 };
+
 const loginWithCredentials = async (email: string, password: string) => {
   const isExists = await User.findOne({ email });
 
@@ -61,6 +62,7 @@ const loginWithCredentials = async (email: string, password: string) => {
       envConfig.JWT_REFRESH_EXPIRES_IN
     );
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
     const { password, ...user } = isExists.toObject();
 
     return {

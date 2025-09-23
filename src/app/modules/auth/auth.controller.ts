@@ -16,7 +16,7 @@ const createUser = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-const loginWithCredentials = catchAsync(async (req, res, next) => {
+const loginWithCredentials = catchAsync(async (req: Request, res: Response) => {
   const { email, password }: LoginSchema = req.body;
   sendResponse(res, {
     statusCode: httpStatus.OK,
