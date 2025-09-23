@@ -2,7 +2,7 @@ import { Router } from "express";
 import validateRequest from "../../middlewares/validateRequest";
 import { createUserZodSchema } from "../user/user.validation";
 import { AuthControllers } from "./auth.controller";
-import { loginSchema } from "./auth.validation";
+import { loginZodSchema } from "./auth.validation";
 
 const router = Router();
 
@@ -14,7 +14,7 @@ router.post(
 
 router.post(
   "/login",
-  validateRequest(loginSchema),
+  validateRequest(loginZodSchema),
   AuthControllers.loginWithCredentials
 );
 

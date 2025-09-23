@@ -1,6 +1,6 @@
 import z from "zod";
 
-export const loginSchema = z.object({
+export const loginZodSchema = z.object({
   email: z
     .string({ error: "Email must be string" })
     .nonempty({ error: "Email is required." })
@@ -21,4 +21,4 @@ export const loginSchema = z.object({
     }),
 });
 
-export type LoginSchema = z.infer<typeof loginSchema>;
+export type LoginSchema = z.infer<typeof loginZodSchema>;
